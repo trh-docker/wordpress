@@ -8,8 +8,8 @@ RUN apt-get update &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* &&\
     a2enmod rewrite
 
-RUN pip install -U youtube-dl &&\
-    rm -rf /var/www/html/* &&\
+RUN pip install -U youtube-dl
+RUN rm -rf /var/www/html/* &&\
     git clone https://github.com/DanielnetoDotCom/YouPHPTube.git . &&\
     install -d -m 0755 -o www-data -g www-data /var/www/html/videos &&\
     chown -R www-data:www-data . &&\
