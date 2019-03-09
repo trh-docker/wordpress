@@ -8,7 +8,8 @@ RUN apt-get update &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 
-RUN git clone https://github.com/DanielnetoDotCom/YouPHPTube.git . &&\
+RUN rm * &&\
+    git clone https://github.com/DanielnetoDotCom/YouPHPTube.git . &&\
     chown -R www-data:www-data .
 
 
