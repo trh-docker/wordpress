@@ -17,7 +17,7 @@ RUN pip install -U youtube-dl &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 EXPOSE 80
-ADD files/apache2/sites-enabled/00-default.conf /etc/apache2/sites-enabled/
+ADD files/apache2/sites-enabled/ /etc/apache2/sites-enabled/
 ADD files/php/php.ini /etc/php/7.0/apache2/
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/opt/bin/entry.sh"]
