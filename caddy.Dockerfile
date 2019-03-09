@@ -1,10 +1,9 @@
 FROM quay.io/spivegin/php7
 
-WORKDIR /var/www/html 
+WORKDIR /opt/tlm/html 
 
 
-RUN rm * &&\
-    git clone https://github.com/DanielnetoDotCom/YouPHPTube.git /var/www/html  &&\
+RUN git clone https://github.com/DanielnetoDotCom/YouPHPTube.git &&\
     chown -R www-data:www-data .
     
 

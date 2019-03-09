@@ -1,6 +1,6 @@
 FROM quay.io/spivegin/apache
 
-WORKDIR /opt/tlm/html 
+WORKDIR /var/www/html 
 
 RUN apt-get update &&\
     apt-get install -y php7.0-zip &&\
@@ -8,10 +8,9 @@ RUN apt-get update &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 
-RUN git clone https://github.com/DanielnetoDotCom/YouPHPTube.git &&\
-    chown -R www-data:www-data . &&\
-    chown -R www-data:www-data /var/www
-    
+RUN git clone https://github.com/DanielnetoDotCom/YouPHPTube.git . &&\
+    chown -R www-data:www-data .
+
 
 EXPOSE 80
 ADD files/apache2/sites-enabled/00-default.conf /etc/apache2/sites-enabled/
