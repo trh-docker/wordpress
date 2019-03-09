@@ -1,5 +1,5 @@
 {$DOMAIN}:{$PORT} {
-    root /opt/tlm/html/
+    root /opt/tlm/html/YouPHPTube
     header / {
         Host {host}
         X-Real-IP {remote}
