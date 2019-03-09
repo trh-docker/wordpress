@@ -4,8 +4,7 @@ WORKDIR /opt/tlm/html
 
 
 RUN git clone https://github.com/DanielnetoDotCom/YouPHPTube.git &&\
-    chown -R www-data:www-data . &&\
-    chown -R www-data:www-data /var/www
+    chown -R www-data:www-data .
     
 
 EXPOSE 80
