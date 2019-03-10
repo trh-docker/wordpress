@@ -9,7 +9,7 @@ RUN chmod +x /opt/composer.sh && /opt/composer.sh &&\
 
 RUN git clone https://github.com/thirtybees/thirtybees.git . &&\
     chown -R www-data:www-data . &&\
-    composer install &&\
+    # composer install &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
