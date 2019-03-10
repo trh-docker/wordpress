@@ -8,7 +8,7 @@ RUN apt-get update &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* 
 
 RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
-    git clone https://github.com/thirtybees/thirtybees.git --recursive -b #.## . &&\
+    git clone https://github.com/thirtybees/thirtybees.git --recursive -b 1.0.x . &&\
     composer.phar install &&\
     chown -R www-data:www-data . &&\
     a2enmod rewrite &&\
