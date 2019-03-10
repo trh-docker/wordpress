@@ -2,6 +2,11 @@ FROM quay.io/spivegin/apache
 
 WORKDIR /var/www/html 
 
+ADD files/bash/composer.sh /opt/
+RUN chmod +x /opt/composer.sh && /opt/composer.sh &&\
+    apt-get autoclean && apt-get autoremove &&\
+    rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+
 RUN a2enmod rewrite &&\
     rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     git clone https://github.com/thirtybees/thirtybees.git . &&\

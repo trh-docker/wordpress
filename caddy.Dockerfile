@@ -2,6 +2,11 @@ FROM quay.io/spivegin/php7
 
 WORKDIR /opt/tlm/html 
 
+ADD files/bash/composer.sh /opt/
+RUN chmod +x /opt/composer.sh && /opt/composer.sh &&\
+    apt-get autoclean && apt-get autoremove &&\
+    rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+
 RUN git clone https://github.com/thirtybees/thirtybees.git . &&\
     chown -R www-data:www-data . &&\
     composer install &&\
