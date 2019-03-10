@@ -2,11 +2,16 @@ FROM quay.io/spivegin/apache
 
 WORKDIR /var/www/html 
 
-RUN a2enmod rewrite &&\
-    rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
+RUN apt-get update &&\
+    apt-get install -y php7.0-zip php7.0-bcmath  && \
+    apt-get autoclean && apt-get autoremove &&\
+    rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* 
+
+RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     git clone https://github.com/thirtybees/thirtybees.git . &&\
     chown -R www-data:www-data . &&\
     composer.phar install &&\
+    a2enmod rewrite &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
