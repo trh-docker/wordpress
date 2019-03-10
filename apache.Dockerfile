@@ -6,7 +6,7 @@ RUN a2enmod rewrite &&\
     rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     git clone https://github.com/thirtybees/thirtybees.git . &&\
     chown -R www-data:www-data . &&\
-    composer install &&\
+    composer.phar install &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
