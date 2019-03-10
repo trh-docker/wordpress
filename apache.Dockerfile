@@ -9,8 +9,8 @@ RUN apt-get update &&\
 
 RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     git clone https://github.com/thirtybees/thirtybees.git . &&\
-    chown -R www-data:www-data . &&\
     composer.phar install &&\
+    chown -R www-data:www-data . &&\
     a2enmod rewrite &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
