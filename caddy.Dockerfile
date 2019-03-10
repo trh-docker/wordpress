@@ -2,8 +2,7 @@ FROM quay.io/spivegin/php7
 
 WORKDIR /opt/tlm/html 
 
-
-RUN git clone https://github.com/thirtybees/thirtybees.git &&\
+RUN git clone https://github.com/thirtybees/thirtybees.git . &&\
     chown -R www-data:www-data . &&\
     composer install &&\
     apt-get autoclean && apt-get autoremove &&\

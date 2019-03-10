@@ -4,7 +4,7 @@ WORKDIR /var/www/html
 
 RUN a2enmod rewrite &&\
     rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
-    git clone https://github.com/thirtybees/thirtybees.git. &&\
+    git clone https://github.com/thirtybees/thirtybees.git . &&\
     chown -R www-data:www-data . &&\
     composer install &&\
     apt-get autoclean && apt-get autoremove &&\
