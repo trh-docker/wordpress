@@ -3,7 +3,7 @@ FROM quay.io/spivegin/apache
 WORKDIR /var/www/html 
 
 RUN apt-get update &&\ 
-    apt-get install -y php7.0-zip php7.0-bcmath php7.0-imap php7.0-curl php7.0-opcache && \
+    apt-get install -y php7.0-zip php7.0-bcmath php7.0-imap php7.0-curl php7.0-opcache php7.0-mysql && \
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* 
 # apt install php7.0-gd php7.0-bcmath php7.0-xml php7.0-json php7.0-zip php7.0-mysql php7.0-mbstring
