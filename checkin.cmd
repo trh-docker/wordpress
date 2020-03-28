@@ -1,3 +1,3 @@
 git add -A
-git commit -m "auto-00"
+git commit -m "new version"
 git push
