@@ -11,6 +11,9 @@ RUN apt-get update &&\
 
 RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     git clone https://github.com/WordPress/WordPress.git --recursive -b 5.3 . &&\
+    git clone https://github.com/kevinoid/postgresql-for-wordpress.git  wp-content/pg4wp &&\
+    cp wp-content/pg4wp/db.php wp-content/db.php &&\
+
     # rm -rf themes/community-theme-default &&\
     # git clone https://github.com/trhhosting/thritybees-theme.git themes/community-theme-default &&\
     # composer.phar install &&\
