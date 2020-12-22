@@ -23,6 +23,7 @@ RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 ADD files/wordpress/wp-config.php /var/www/html/
+ADD files/wordpress/db.php /var/www/html/wp-content/
 EXPOSE 80
 ADD files/apache2/sites-enabled/ /etc/apache2/sites-enabled/
 ADD files/php/php.ini /etc/php/7.0/apache2/
