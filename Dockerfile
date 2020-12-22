@@ -22,7 +22,7 @@ RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     a2enmod rewrite &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-
+ADD files/wordpress/wp-config.php /var/www/html/
 EXPOSE 80
 ADD files/apache2/sites-enabled/ /etc/apache2/sites-enabled/
 ADD files/php/php.ini /etc/php/7.0/apache2/
