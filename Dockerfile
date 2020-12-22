@@ -10,7 +10,7 @@ RUN apt-get update &&\
 # php7.0-imap php7.0-curl php7.0-opcache
 
 RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
-    git clone https://github.com/thirtybees/thirtybees.git --recursive -b 5.3 . &&\
+    git clone https://github.com/trh-docker/wordpress.git --recursive -b 5.3 . &&\
     # rm -rf themes/community-theme-default &&\
     # git clone https://github.com/trhhosting/thritybees-theme.git themes/community-theme-default &&\
     # composer.phar install &&\
