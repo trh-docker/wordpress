@@ -11,9 +11,9 @@ RUN apt-get update && apt upgrade -y &&\
 
 RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     git clone https://github.com/WordPress/WordPress.git --recursive -b 5.3 . &&\
-    git clone https://github.com/kevinoid/postgresql-for-wordpress.git  /tmp/ &&\
-    mv  /tmp/pg4wp wp-content/ &&\
-    cp wp-content/pg4wp/db.php wp-content/db.php &&\
+    # git clone https://github.com/kevinoid/postgresql-for-wordpress.git  /tmp/ &&\
+    # mv  /tmp/pg4wp wp-content/ &&\
+    # cp wp-content/pg4wp/db.php wp-content/db.php &&\
 
     # rm -rf themes/community-theme-default &&\
     # git clone https://github.com/trhhosting/thritybees-theme.git themes/community-theme-default &&\
@@ -22,8 +22,8 @@ RUN rm -rf /var/www/html && mkdir /var/www/html && cd /var/www/html &&\
     a2enmod rewrite &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-ADD files/wordpress/wp-config.php /var/www/html/
-ADD files/wordpress/db.php /var/www/html/wp-content/
+# ADD files/wordpress/wp-config.php /var/www/html/
+# ADD files/wordpress/db.php /var/www/html/wp-content/
 EXPOSE 80
 ADD files/apache2/sites-enabled/ /etc/apache2/sites-enabled/
 ADD files/php/php.ini /etc/php/7.0/apache2/
